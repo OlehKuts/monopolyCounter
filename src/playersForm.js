@@ -24,7 +24,6 @@ export const PlayersForm = ({ onAdd }) => {
     setPlayerId(memberList[0].name);
     setPlayerName("");
   };
-  console.log(usedIds);
   return (
     <>
       {showForm && (

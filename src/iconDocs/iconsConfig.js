@@ -13,7 +13,7 @@ export const iconsConfig = {
       <g id="Layer_2" data-name="Layer 2">
         <g id="Layer_1-2" data-name="Layer 1">
           <path
-            class="cls-1"
+            className="cls-1"
             d="M63.22,19.57,44.5.78a2.67,2.67,0,0,0-3.78,3.77L54.79,18.67H2.67a2.67,2.67,0,1,0,0,5.33H55L40.73,38.11a2.67,2.67,0,1,0,3.76,3.78L63.21,23.35a2.67,2.67,0,0,0,0-3.78Z"
           />
         </g>
@@ -187,17 +187,17 @@ export const iconsConfig = {
       width={size}
       {...props}
     >
-      <circle class="st0" cx="7" cy="23" r="3" />
-      <circle class="st0" cx="23" cy="23" r="3" />
-      <line class="st0" x1="28" y1="19" x2="30" y2="19" />
-      <line class="st0" x1="4" y1="16" x2="24" y2="16" />
-      <line class="st0" x1="13" y1="10" x2="10" y2="16" />
+      <circle className="st0" cx="7" cy="23" r="3" />
+      <circle className="st0" cx="23" cy="23" r="3" />
+      <line className="st0" x1="28" y1="19" x2="30" y2="19" />
+      <line className="st0" x1="4" y1="16" x2="24" y2="16" />
+      <line className="st0" x1="13" y1="10" x2="10" y2="16" />
       <path
-        class="st0"
+        className="st0"
         d="M26,23h4c0.6,0,1-0.4,1-1v-2c0-2.2-1.8-4-4-4h-3l-3.8-4.6c-0.8-0.9-1.9-1.4-3.1-1.4H9.5c-1.5,0-2.9,0.9-3.6,2.2
 	L4,16H3c-1.1,0-2,0.9-2,2v4c0,0.6,0.4,1,1,1h2"
       />
-      <line class="st0" x1="10" y1="23" x2="20" y2="23" />
+      <line className="st0" x1="10" y1="23" x2="20" y2="23" />
     </svg>
   ),
   cat: ({ size, color, ...props }) => (
@@ -316,14 +316,14 @@ export const iconsConfig = {
       {...props}
     >
       <path
-        class="st0"
+        className="st0"
         d="M14.7,16c-1.6-1.1-2.7-2.9-2.7-5c0-3.5,3.1-6.4,6.7-6c2.6,0.3,4.8,2.4,5.2,5.1c0.4,2.7-1,5-3.1,6.2
 	c2.6,0.8,4.5,3.4,4.1,6.4c-0.3,3.1-3.1,5.3-6.2,5.3L12,28c-3.3,0-6-2-7-6v-8l0.8,0.6C7.9,16.2,10.4,17,13,17h0"
       />
-      <line class="st0" x1="20" y1="9" x2="20" y2="12" />
-      <path class="st0" d="M23.2,14c1.8-0.1,3.5-0.9,4.6-2.4L29,10h-5" />
+      <line className="st0" x1="20" y1="9" x2="20" y2="12" />
+      <path className="st0" d="M23.2,14c1.8-0.1,3.5-0.9,4.6-2.4L29,10h-5" />
       <path
-        class="st0"
+        className="st0"
         d="M19,22c0,1.7-1.3,3-3,3c-4,0-5-3-5-3s3.3-3,5-3S19,20.3,19,22z"
       />
     </svg>
@@ -387,12 +387,12 @@ export const iconsConfig = {
       width={size}
       {...props}
     >
-      <polygon class="st0" points="16,3 3,10 3,13 29,13 29,10 " />
-      <rect x="14" y="13" class="st0" width="4" height="10" />
-      <rect x="23" y="13" class="st0" width="4" height="10" />
-      <rect x="5" y="13" class="st0" width="4" height="10" />
-      <rect x="3" y="23" class="st0" width="26" height="3" />
-      <rect x="1" y="26" class="st0" width="30" height="3" />
+      <polygon className="st0" points="16,3 3,10 3,13 29,13 29,10 " />
+      <rect x="14" y="13" className="st0" width="4" height="10" />
+      <rect x="23" y="13" className="st0" width="4" height="10" />
+      <rect x="5" y="13" className="st0" width="4" height="10" />
+      <rect x="3" y="23" className="st0" width="26" height="3" />
+      <rect x="1" y="26" className="st0" width="30" height="3" />
     </svg>
   ),
   dice: ({ size, color, ...props }) => (
@@ -750,10 +750,10 @@ export const iconsConfig = {
       {...props}
     >
       <path
-        class="a"
+        className="a"
         d="M20.254,13.5H22.5a1,1,0,0,0,1-1v-1a1,1,0,0,0-1-1H20.253a11.8,11.8,0,0,0-1-2.922L20.839,5.99a1,1,0,0,0,0-1.414L19.424,3.161a1,1,0,0,0-1.414,0L16.42,4.75a11.769,11.769,0,0,0-2.92-1V1.5a1,1,0,0,0-1-1h-1a1,1,0,0,0-1,1V3.748a11.777,11.777,0,0,0-2.921,1L5.989,3.161a1,1,0,0,0-1.414,0L3.16,4.576a1,1,0,0,0,0,1.414L4.75,7.579a11.821,11.821,0,0,0-1,2.921H1.5a1,1,0,0,0-1,1v1a1,1,0,0,0,1,1H3.746a11.821,11.821,0,0,0,1,2.921l-1.59,1.59a1,1,0,0,0,0,1.414l1.415,1.414a1,1,0,0,0,1.414,0l1.589-1.589A11.8,11.8,0,0,0,10.5,20.254V22.5a1,1,0,0,0,1,1h1a1,1,0,0,0,1-1V20.254a11.8,11.8,0,0,0,2.92-1l1.591,1.589a1,1,0,0,0,1.414,0l1.414-1.414a1,1,0,0,0,0-1.414l-1.589-1.59A11.821,11.821,0,0,0,20.254,13.5Z"
       />
-      <circle class="a" cx="12" cy="12" r="4.5" />
+      <circle className="a" cx="12" cy="12" r="4.5" />
     </svg>
   ),
   eye: ({ size, color, ...props }) => (
@@ -798,7 +798,7 @@ export const iconsConfig = {
       <g />
       <g />
     </svg>
-  )
+  ),
 };
 
 // параметри width, height, fill(колір) видалені та будуть передаватися props-ами
