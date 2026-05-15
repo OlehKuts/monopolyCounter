@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/monopolyCounter/static/css/main.5c36357c.css",
+    "main.js": "/monopolyCounter/static/js/main.df160b93.js",
+    "index.html": "/monopolyCounter/index.html",
+    "main.5c36357c.css.map": "/monopolyCounter/static/css/main.5c36357c.css.map",
+    "main.df160b93.js.map": "/monopolyCounter/static/js/main.df160b93.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5c36357c.css",
+    "static/js/main.df160b93.js"
+  ]
+}

@@ -1,18 +1,19 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import "./styles.css";
 import { TransactionForm } from "./transactionForm";
 import { PlayersForm } from "./playersForm";
 import { playersReducer, PLAYERS_ACTIONS } from "./playersReducer";
 import { bank } from "./database";
-import { transaction } from "./database";
+import { initialTransaction } from "./database";
 import { ScoreBoard } from "./scoreBoard";
 import {
   transactionsReducer,
-  TRANSACTIONS_ACTIONS
+  TRANSACTIONS_ACTIONS,
 } from "./transactionsReducer";
 import { TransactionsHistory } from "./transactionsHistory";
 
 export const App = () => {
+  const [showPlayersForm, setShowPlayersForm] = useState(true);
   const [players, dispatch] = useReducer(playersReducer, [bank]);
   const onTransactionAdd = (payer, receiver, sum) => {
     dispatch({ type: PLAYERS_ACTIONS.TRANSACTIONADD, payer, receiver, sum });
@@ -21,18 +22,18 @@ export const App = () => {
     dispatch({
       type: PLAYERS_ACTIONS.PLAYERSADD,
       playerId,
-      playerName
+      playerName,
     });
   };
   const [transactions, dispatchTransaction] = useReducer(transactionsReducer, [
-    transaction
+    initialTransaction,
   ]);
   const onNewTransaction = (payer, receiver, sum) => {
     dispatchTransaction({
       type: TRANSACTIONS_ACTIONS.NEW,
       payer,
       receiver,
-      sum
+      sum,
     });
   };
   const sortedPlayers = players.sort(function (a, b) {
@@ -42,15 +43,19 @@ export const App = () => {
   return (
     <div className="App">
       <TransactionsHistory transactions={transactions} />
-      <div className="transactionForm">
-        <PlayersForm onAdd={onPlayerAdd} />
+      {showPlayersForm ? (
+        <PlayersForm
+          onAdd={onPlayerAdd}
+          launchGame={() => setShowPlayersForm(false)}
+        />
+      ) : (
         <TransactionForm
           onAdd={onTransactionAdd}
           onNewTransaction={onNewTransaction}
           players={players}
         />
-        <ScoreBoard playerList={sortedPlayers} />
-      </div>
+      )}
+      <ScoreBoard playerList={sortedPlayers} />
     </div>
   );
 };

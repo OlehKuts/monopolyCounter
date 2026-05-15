@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./styles.css";
 import { propertyList, paymentsList } from "./database";
 import { PropertyCard } from "./propertyCard";
+import { Text } from "./text";
 
 export const TransactionForm = ({ onAdd, onNewTransaction, players }) => {
-  const [showForm, setShowForm] = useState(false);
   const nameList = players.map((p) => p.name);
   const [payer, setPayer] = useState(nameList[0]);
   const onPayerChange = (event) => {
@@ -45,72 +45,61 @@ export const TransactionForm = ({ onAdd, onNewTransaction, players }) => {
   }, [curProperty]);
   useEffect(() => {
     setSum(
-      propertyList.filter((p) => p.name === curProperty)[0].payments[curPayType]
+      propertyList.filter((p) => p.name === curProperty)[0].payments[
+        curPayType
+      ],
     );
   }, [curPayType, curProperty]);
   return (
-    <>
-      {!showForm && (
-        <div>
-          <button onClick={() => setShowForm(true)} className="btn-start">
-            {" "}
-            Start Game
-          </button>{" "}
-        </div>
-      )}
-      {showForm && (
-        <div>
-          <form onSubmit={onSubmit}>
-            <div>
-              {" "}
-              <select
-                value={curProperty}
-                onChange={onCurPropertyChange}
-                className="propertyList"
-              >
-                {propertyList.map((item, idx) => (
-                  <option key={idx} value={item.name}>
-                    {item.name}
-                  </option>
-                ))}
-              </select>
-              <select value={curPayType} onChange={onCurPayTypeChange}>
-                {paymentsList.map((item, idx) => (
-                  <option key={idx} value={idx}>
-                    {item.name}
-                  </option>
-                ))}
-              </select>
-              <select value={payer} onChange={onPayerChange}>
-                {nameList.map((item, idx) => (
-                  <option key={idx} value={item}>
-                    {item}
-                  </option>
-                ))}
-              </select>
-              <select value={receiver} onChange={onReceiverChange}>
-                {nameList.map((item, idx) => (
-                  <option key={idx} value={item}>
-                    {item}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div>
-              {" "}
-              <input
-                value={sum}
-                onChange={onSumChange}
-                placeholder="enter sum..."
-                className="sum"
-              />
-              <input type="submit" value="Submit" className="submit" id="pay" />
-            </div>
-          </form>
-        </div>
-      )}
+    <div className="formContainer">
       <PropertyCard property={actionProperty} />
-      <div></div>
-    </>
+      <form onSubmit={onSubmit}>
+        <div className="transactionContainer">
+          {" "}
+          <select
+            value={curProperty}
+            onChange={onCurPropertyChange}
+            className="propertyList"
+          >
+            {propertyList.map((item, idx) => (
+              <option key={idx} value={item.name}>
+                {item.name}
+              </option>
+            ))}
+          </select>
+          <select value={curPayType} onChange={onCurPayTypeChange}>
+            {paymentsList.map((item, idx) => (
+              <option key={idx} value={idx}>
+                {item.name}
+              </option>
+            ))}
+          </select>
+          <Text size="0.75rem">From</Text>
+          <select value={payer} onChange={onPayerChange}>
+            {nameList.map((item, idx) => (
+              <option key={idx} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+          <Text size="0.75rem">To</Text>
+          <select value={receiver} onChange={onReceiverChange}>
+            {nameList.map((item, idx) => (
+              <option key={idx} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+        </div>{" "}
+        <Text size="0.75rem">Transaction amount</Text>
+        <input
+          value={sum}
+          onChange={onSumChange}
+          placeholder="enter sum..."
+          className="sum"
+        />
+        <input type="submit" value="Submit" className="submit" id="pay" />
+      </form>
+    </div>
   );
 };

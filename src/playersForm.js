@@ -3,9 +3,7 @@ import "./styles.css";
 import { memberList } from "./database";
 import { Text } from "./text";
 
-export const PlayersForm = ({ onAdd }) => {
-  const [showForm, setShowForm] = useState(true);
-
+export const PlayersForm = ({ onAdd, launchGame }) => {
   const [playerId, setPlayerId] = useState(memberList[0].name);
   const onPlayerIdChange = (event) => {
     setPlayerId(event.target.value);
@@ -25,35 +23,26 @@ export const PlayersForm = ({ onAdd }) => {
     setPlayerName("");
   };
   return (
-    <>
-      {showForm && (
-        <div>
-          <div className="playersForm">
-            <form onSubmit={onSubmit}>
-              <Text size="1.25rem">Create new player</Text>
-              <div>
-                <select value={playerId} onChange={onPlayerIdChange}>
-                  {memberList.map((item, idx) => (
-                    <option key={idx} value={item.name}>
-                      {item.name}
-                    </option>
-                  ))}
-                </select>
-                <input
-                  value={playerName}
-                  onChange={onPlayerNameChange}
-                  placeholder="enter your name..."
-                />
-              </div>
-              <input type="submit" value="Add player" className="submit" />
-              <button onClick={() => setShowForm((prev) => !prev)}>
-                {" "}
-                Finish
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
-    </>
+    <div className="formContainer">
+      <form onSubmit={onSubmit}>
+        <Text size="1.25rem">Create a new player</Text>
+        <input
+          value={playerName}
+          onChange={onPlayerNameChange}
+          placeholder="enter your name..."
+        />
+        <Text size="0.75rem">Choose your token</Text>
+        <select value={playerId} onChange={onPlayerIdChange}>
+          {memberList.map((item, idx) => (
+            <option key={idx} value={item.name}>
+              {item.name}
+            </option>
+          ))}
+        </select>
+        <input type="submit" value="Add player" className="submit" />
+        <hr />
+        <button onClick={launchGame}>Launch the game</button>
+      </form>
+    </div>
   );
 };

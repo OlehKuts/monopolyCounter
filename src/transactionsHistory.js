@@ -5,7 +5,7 @@ import { Text } from "./text";
 
 export const TransactionsHistory = ({ transactions }) => {
   return (
-    <div className="scoreboard" id="transBoard">
+    <div id="transBoard">
       <Text size="1.2rem" color="black">
         TRANSACTIONS HISTORY
       </Text>
